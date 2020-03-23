@@ -2,8 +2,8 @@
 # Or google "uproot", plenty of support!
 import uproot
 
-# Open ROOT file (without any dependency on ROOT software)
-file = uproot.open("0.root")
+# Open/parse ROOT file without any dependency on ROOT software
+file = uproot.open("0.root") # copy the test file to local space
 
 # Navigate to directory containing branches
 events = file[b"L1TrackNtuple/eventTree"]
