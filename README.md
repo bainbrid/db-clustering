@@ -70,6 +70,8 @@ Jets are sprays of collinear particles (both charged and neutral) that are clust
 
 ### Tracking particle information 
 
+Tracking particles provide the track parameters that are obtained directly from the Monte-Carlo (generator) and GEANT (detector simulation) programmes. They provide "truth-level" information that can be used for classification and regression studies. 
+
 | Variable           | Description |
 | ---                | --- |
 | tp_pt              | TP transverse momentum |
