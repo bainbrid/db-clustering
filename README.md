@@ -24,14 +24,30 @@ Documentation to come!
 
 [Here](https://github.com/cms-l1t-offline/cmssw/blob/l1t-phase2-v2.37.0/L1Trigger/TrackFindingTracklet/test/L1TrackNtupleMaker.cc) is where the branches are filled in the CMS software. [This](https://github.com/cms-l1t-offline/cmssw/blob/l1t-phase2-v2.37.0/L1Trigger/TrackFindingTracklet/test/L1TrackNtupleMaker.cc#L567) is the method that iterates over LHC events. 
 
+### Jet-level information 
+
+Jets are sprays of collinear particles (both charged and neutral) that are clustered using the [anti-kT algorithm](https://arxiv.org/abs/0802.1189) with distance parameter R = 0.4. Jets typically contain tens of tracks from charged particles. 
+
+| Variable                   | Description |
+| ---                        | --- |
+| jet_eta                    | Jet pseudorapidity |
+| jet_phi                    | Jet azimuthal angle |
+| jet_pt                     | Jet transverse momentum |
+| jet_tp_sumpt               | Transverse-momentum sum over "tracking particles" associated to jet |
+| jet_trk_sumpt              | Transverse-momentum sum over tracks associated to jet |
+| jet_matchtrk_sumpt         |     |
+| jet_loosematchtrk_sumpt    |     |
+
+### Track information 
+
 | Variable           | Description |
 | ---                | --- |
-| trk_pt             |     | 
-| trk_eta            |     | 
-| trk_phi            |     | 
-| trk_d0             |     | 
-| trk_z0             |     | 
-| trk_chi2           |     | 
+| trk_pt             | Track transverse momentum | 
+| trk_eta            | Track pseudorapidity | 
+| trk_phi            | Track azimuthal angle | 
+| trk_d0             | Track impact parameter (distance from point of closest approach to primary vertex) | 
+| trk_z0             | Track longitudinal position (along beam pipe) at point of closest approach to primary vertex | 
+| trk_chi2           | Chi squared for track helix fit | 
 | trk_bendchi2       |     | 
 | trk_nstub          |     | 
 | trk_lhits          |     | 
@@ -51,4 +67,27 @@ Documentation to come!
 | trk_injet          |     | 
 | trk_injet_highpt   |     | 
 | trk_injet_vhighpt  |     |
+
+### Tracking particle information 
+
+| Variable           | Description |
+| ---                | --- |
+| tp_pt              | TP transverse momentum |
+| tp_eta             | TP pseudorapidity |
+| tp_phi             | TP azimuthal angle |
+| tp_dxy             | TP transverse impact parameter (transverse distance from point of closest approach to primary vertex) |
+| tp_d0              | TP impact parameter (distance from point of closest approach to primary vertex) |
+| tp_z0              | Track longitudinal position (along beam pipe) at point of closest approach to primary vertex |
+| tp_d0_prod         |     |
+| tp_z0_prod         |     |
+| tp_pdgid           | TP particle type (Particle Data Group identifier) |
+| tp_nmatch          |     |
+| tp_nloosematch     |     |
+| tp_nstub           |     |
+| tp_eventid         |     |
+| tp_charge          | TP electric charge |
+| tp_injet           |     |
+| tp_injet_highpt    |     |
+| tp_injet_vhighpt   |     |
+
 
