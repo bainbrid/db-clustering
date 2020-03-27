@@ -101,3 +101,8 @@ Jets are sprays of collinear particles (both charged and neutral) that are clust
 | jet_matchtrk_sumpt         |     |
 | jet_loosematchtrk_sumpt    |     |
 
+## Scripts
+
+The `analysis.py` script provides simple examples of how to read and manipulate the ROOT file contents, and a simple method to estimate the true z0 position of the primary vertex. The `histograms.py` script produces some example plots, one of which is shown below. The plot shows the difference between the z0 position of each track found an LHC event and our estimate of the "true" z0 position of the "primary vertex" (from the most interesting proton-proton interaction in the LHC event). There is a strong peak at zero, which is due to the tracks originating from the primary vertex. The peak is superimposed on an almost-flat continuous background, which is due to tracks from the other (less interesting) proton-proton interactions in the same LHC event. (The scripts contain descriptions of the terms used here in more detail.)
+
+<img src="https://github.com/bainbrid/db-clustering/blob/master/residuals.png" width="400"/>
