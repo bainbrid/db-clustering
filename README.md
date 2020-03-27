@@ -40,8 +40,8 @@ The tracks from charged particles from each LHC event should be "clustered" acco
 | trk_pt             | Track transverse momentum | 
 | trk_eta            | Track pseudorapidity | 
 | trk_phi            | Track azimuthal angle | 
-| trk_d0             | Track impact parameter (distance from point of closest approach to primary vertex) | 
-| trk_z0             | Track longitudinal position (along beam pipe) at point of closest approach to primary vertex | 
+| trk_d0             | Track impact parameter (distance from point of closest approach to originating vertex) | 
+| trk_z0             | Track longitudinal position (along beam pipe) at point of closest approach to originating vertex | 
 | trk_chi2           | Chi squared for track helix fit | 
 | trk_bendchi2       |     | 
 | trk_nstub          |     | 
@@ -72,9 +72,9 @@ Tracking particles provide the track parameters that are obtained directly from 
 | tp_pt              | TP transverse momentum |
 | tp_eta             | TP pseudorapidity |
 | tp_phi             | TP azimuthal angle |
-| tp_dxy             | TP transverse impact parameter (transverse distance from point of closest approach to primary vertex) |
-| tp_d0              | TP impact parameter (distance from point of closest approach to primary vertex) |
-| tp_z0              | Track longitudinal position (along beam pipe) at point of closest approach to primary vertex |
+| tp_dxy             | TP transverse impact parameter (transverse distance from point of closest approach to originating vertex) |
+| tp_d0              | TP impact parameter (distance from point of closest approach to originating vertex) |
+| tp_z0              | Track longitudinal position (along beam pipe) at point of closest approach to originating vertex |
 | tp_d0_prod         |     |
 | tp_z0_prod         |     |
 | tp_pdgid           | TP particle type (Particle Data Group identifier) |
