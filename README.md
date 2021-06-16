@@ -19,6 +19,8 @@ The table below shows the anticipated contents of the 96 bits which describe eac
 
 ## Available files 
 
+Location: https://cernbox.cern.ch/index.php/s/HW5Ggy6nw0h7klP
+
 `0.root`: test file containing jets from 250 LHC events. 
 
 `00.root`-`39.root`: 40 files containing jets from ~1M LHC events (~25000 events/file, 0.5 GB/file).
