@@ -16,6 +16,7 @@ trk_pt = events['trk_pt'].array()
 mask = tp_vertex_id == 0
 mask_no_sv = np.abs(tp_d0) < 0.01
 true_z0 = tp_z0[mask&mask_no_sv].mean()
+matchtrk_z0 = events['matchtrk_z0'].array()
 
 # Plot the trk_pt distribution
 counts,edges = np.histogram(trk_pt.flatten(),bins=75,range=(0.,150.))
@@ -67,15 +68,28 @@ counts,edges = np.histogram(residuals.flatten(),bins=100,range=(-5.,5.))
 plt.step(x=edges, y=np.append(counts,0), where='post')
 plt.xlim(edges[0], edges[-1])
 plt.yscale('linear')
-plt.ylim(0., counts.max()*2.)
+plt.ylim(0., counts.max()*1.2)
 plt.xlabel('Track z0 position - (true) primary vertex z0 position (cm)')
 plt.ylabel('Counts/bin')
-plt.savefig('residuals.pdf')
+plt.savefig('residuals_all.pdf')
 plt.clf()
 
-# The final plot shows a strong peak at zero, which is due to the
+# The above plot shows a strong peak at zero, which is due to the
 # tracks originating from the primary vertex. The peak is superimposed
 # on an almost-flat continuous background, which is due to tracks from
 # the other interactions that happen in an LHC event (called pileup).
 
+# Plot the residuals between the matchtrk_z0 and tp_z0
+residuals = matchtrk_z0 - tp_z0
+counts,edges = np.histogram(residuals.flatten(),bins=100,range=(-5.,5.))
+plt.step(x=edges, y=np.append(counts,0), where='post')
+plt.xlim(edges[0], edges[-1])
+plt.yscale('linear')
+plt.ylim(0., counts.max()*1.2)
+plt.xlabel('Matched track z0 position - (true) primary vertex z0 position (cm)')
+plt.ylabel('Counts/bin')
+plt.savefig('residuals.pdf')
+plt.clf()
 
+# The above plot shows a strong peak at zero, which is due to the
+# tracks matched to TPs that originate from the primary vertex. 
