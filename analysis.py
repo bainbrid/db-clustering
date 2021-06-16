@@ -39,6 +39,8 @@ print(events.show())
 # to the tracks.
 
 # Inspect the 'tp_eventid' branch from 1st event.
+# 'tp_eventid' has a unique value for each pp collision (see details below).
+# '0' means primary interaction (as defined by GEN info).
 print()
 print('Number of TPs in 1st event:',len(events['tp_eventid'].array()[0]))
 print('List of "tp_eventid" values:',' '.join(['{:.0f}, '.format(x) for x in events['tp_eventid'].array()[0]]))
@@ -55,6 +57,8 @@ print('tp_eta      ',' '.join(['{:6.2f}'.format(x) for x in events['tp_eta'].arr
 print('matchtrk_eta',' '.join(['{:6.2f}'.format(x) for x in events['matchtrk_eta'].array()[0,:10]]))
 print('tp_phi      ',' '.join(['{:6.2f}'.format(x) for x in events['tp_phi'].array()[0,:10]]))
 print('matchtrk_phi',' '.join(['{:6.2f}'.format(x) for x in events['matchtrk_phi'].array()[0,:10]]))
+print('tp_z0       ',' '.join(['{:6.2f}'.format(x) for x in events['tp_z0'].array()[0,:10]]))
+print('matchtrk_z0 ',' '.join(['{:6.2f}'.format(x) for x in events['matchtrk_z0'].array()[0,:10]]))
 
 # There are many proton-proton (pp) interactions in an LHC event. Each
 # pp interaction produces many particles that we associated to a
@@ -67,7 +71,7 @@ print('matchtrk_phi',' '.join(['{:6.2f}'.format(x) for x in events['matchtrk_phi
 # tp_eventid value of 0 is a special value that indicates the PV.
 
 # Look in more detail at 20 example "Trigger Primitives" found in 1st
-# event We inspect 20th-40th, so we see a range of tp_eventid.
+# event. We inspect 20th-40th, so we see a range of tp_eventid.
 print()
 print("Variables from the slice [0,20:40]")
 print('tp_eventid',' '.join(['{:6.0f}'.format(x) for x in events['tp_eventid'].array()[0,20:40]]))
